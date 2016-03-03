@@ -20,4 +20,4 @@ business_data3 = FOREACH business_data2 GENERATE business_id, name, city, state,
 cool1 = FILTER business_data3 BY hipster is not null AND divey is not null and trendy is not null;
 cool2 = FILTER cool1 BY (hipster == 'true') or (divey == 'true') or (trendy == 'true');
 group_data = GROUP cool2 BY (city, state);
-cool_count = FOREACH group_data GENERATE group, COUNT(cool2)
+cool_count = FOREACH group_data GENERATE group, COUNT(cool2);
